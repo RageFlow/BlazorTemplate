@@ -3,23 +3,29 @@
 
 @using BlazorTemplate.Functions @*Using namespace "Functions" for accessing class files in Functions folder*@
 
-<PageTitle>Index</PageTitle>
-<!---->
+<PageTitle>Index</PageTitle> @*Setup of Page title (Is shown in the browser tab so not important to mess with)*@
+
+<!--
+    If you want to run project where it can Hot Reload
+    Visual Studio -> View -> Terminal
+    Type this inside terminal windows: dotnet watch run debug
+-->
+
+
+
+
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-<p>My text:</p>
-@if (customText == null)
+@if (customText == null) @*If statement for UI (Not code based but checks dynamically for changes in variable)*@
 {
-    <p>Loading...</p>
+    <p>My text: Loading...</p>
 }
 else
 {
-    <p>@customText</p>
+    <p>My text: @customText</p>
 }
-
-@*jhii*@
 
 
 <p role="status">Current count: @currentCount</p>
@@ -34,7 +40,7 @@ else
 
     FirstClass MyFirstClass = new FirstClass();
 
-    public Index()
+    public Index() @*Same as Static Void Main (Is run on startup)*@
     {
         customText = MyFirstClass.GetHello();
     }
@@ -42,7 +48,7 @@ else
 
     private int currentCount = 0;  @*Int for showing in the UI*@
 
-    private void IncrementCount()
+    private void IncrementCount() @*Method (Can also be called from UI)*@
     {
         currentCount++;
     }
