@@ -1,0 +1,47 @@
+﻿@page "/"
+@*Pagename (Not used in this template)*@
+
+@using BlazorTemplate.Functions @*Using namespace "Functions" for accessing class files in Functions folder*@
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<p>My text:</p>
+@if (customText == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <p>@customText</p>
+}
+
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+
+
+@code{
+    private string? customText; @*Nullable string for showing in the UI*@
+
+    FirstClass MyFirstClass = new FirstClass();
+
+    public Index()
+    {
+        customText = MyFirstClass.GetHello();
+    }
+
+
+    private int currentCount = 0;  @*Int for showing in the UI*@
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
