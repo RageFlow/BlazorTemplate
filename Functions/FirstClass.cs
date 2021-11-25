@@ -9,7 +9,12 @@
 
         public string GetHello()
         {
-            return "Hello";
+            return "My first method call - YAIIII";
         }
     }
+
+    
+
+    // VS -> View -> Terminal:
+    // dotnet watch run debug
 }
